@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('../../public/fonts/LufgaThin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('../../public/fonts/LufgaExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('../../public/fonts/LufgaLight.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('../../public/fonts/LufgaRegular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('../../public/fonts/LufgaMedium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('../../public/fonts/LufgaSemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('../../public/fonts/LufgaBold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('../../public/fonts/LufgaExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('../../public/fonts/LufgaBlack.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Italics (solo si los vas a usar) */
+@font-face {
+  font-family: 'Lufga';
+  src: url('../../public/fonts/LufgaRegularItalic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Lufga', sans-serif;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@theme {
+/* Morado */
+--color-morado-50: oklch(95.5% 0.020 320.74);
+--color-morado-100: oklch(90.2% 0.040 320.74);
+--color-morado-200: oklch(82.1% 0.070 320.74);
+--color-morado-300: oklch(72.8% 0.105 320.74);
+--color-morado-400: oklch(61.3% 0.132 320.74);
+--color-morado-500: oklch(44.79% 0.159 320.74); /* Base */
+--color-morado-600: oklch(38.2% 0.145 320.74);
+--color-morado-700: oklch(32.1% 0.128 320.74);
+--color-morado-800: oklch(26.8% 0.108 320.74);
+--color-morado-900: oklch(22.3% 0.088 320.74);
+--color-morado-950: oklch(15.1% 0.055 320.74);
+/* Salmon */
+--color-salmon-50: oklch(96.2% 0.025 22.95);
+--color-salmon-100: oklch(91.8% 0.048 22.95);
+--color-salmon-200: oklch(85.3% 0.082 22.95);
+--color-salmon-300: oklch(77.2% 0.121 22.95);
+--color-salmon-400: oklch(72.9% 0.142 22.95);
+--color-salmon-500: oklch(67.83% 0.154 22.95); /* Base */
+--color-salmon-600: oklch(59.1% 0.145 22.95);
+--color-salmon-700: oklch(48.9% 0.128 22.95);
+--color-salmon-800: oklch(41.2% 0.108 22.95);
+--color-salmon-900: oklch(35.8% 0.088 22.95);
+--color-salmon-950: oklch(22.1% 0.055 22.95);
+/* Crema */
+--color-crema-50: oklch(98.5% 0.015 92.23);
+--color-crema-100: oklch(96.09% 0.038 92.23); /* Base */
+--color-crema-200: oklch(92.8% 0.055 92.23);
+--color-crema-300: oklch(87.2% 0.075 92.23);
+--color-crema-400: oklch(79.5% 0.095 92.23);
+--color-crema-500: oklch(71.8% 0.112 92.23);
+--color-crema-600: oklch(62.1% 0.125 92.23);
+--color-crema-700: oklch(51.9% 0.135 92.23);
+--color-crema-800: oklch(42.8% 0.142 92.23);
+--color-crema-900: oklch(35.2% 0.145 92.23);
+--color-crema-950: oklch(21.5% 0.148 92.23);
+}
+
+/*
+.dark {
+  --bg-primary: var(--color-morado-950);
+  --bg-secondary: var(--color-morado-900);
+  --bg-accent: var(--color-salmon-950);
+  --text-primary: var(--color-crema-100);
+  --text-secondary: var(--color-crema-200);
+  --text-accent: var(--color-salmon-300);
+  --border-primary: var(--color-morado-800);
+  --border-accent: var(--color-salmon-800);
+}
+
+.bg-theme-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-theme-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.bg-theme-accent {
+  background-color: var(--bg-accent);
+}
+
+.text-theme-primary {
+  color: var(--text-primary);
+}
+
+.text-theme-secondary {
+  color: var(--text-secondary);
+}
+
+.text-theme-accent {
+  color: var(--text-accent);
+}
+
+.border-theme-primary {
+  border-color: var(--border-primary);
+}
+
+.border-theme-accent {
+  border-color: var(--border-accent);
+}
+
+.theme-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle-enter {
+  transform: scale(0.8) rotate(-180deg);
+  opacity: 0;
+}
+
+.theme-toggle-enter-active {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-exit {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+
+.theme-toggle-exit-active {
+  transform: scale(0.8) rotate(180deg);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.no-theme-flash {
+  visibility: hidden;
+}
+
+.theme-loaded .no-theme-flash {
+  visibility: visible;
+}
+*/
