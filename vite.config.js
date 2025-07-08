@@ -10,6 +10,8 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
+      scope: '/pothe-pwa/',
+      base: '/pothe-pwa/',
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,jpg,jpeg}'],
       },
@@ -126,7 +128,7 @@ export default defineConfig({
             name: 'Ver Sabores',
             short_name: 'Sabores',
             description: 'Explora más de 80 sabores de helados, nieves y paletas',
-            url: '/pothe-pwa/sabores',
+            url: 'sabores',
             icons: [
               {
                 src: 'images/icons/shortcut-sabores.png',
@@ -139,7 +141,7 @@ export default defineConfig({
             name: 'Eventos',
             short_name: 'Eventos',
             description: 'Contrata nuestro servicio para eventos especiales',
-            url: '/pothe-pwa/eventos',
+            url: 'eventos',
             icons: [
               {
                 src: 'images/icons/shortcut-eventos.png',
@@ -152,7 +154,7 @@ export default defineConfig({
             name: 'Contacto',
             short_name: 'Contacto',
             description: 'Ponte en contacto con nosotros',
-            url: '/pothe-pwa/contacto',
+            url: 'contacto',
             icons: [
               {
                 src: 'images/icons/shortcut-contacto.png',

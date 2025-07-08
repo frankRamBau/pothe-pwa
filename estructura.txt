@@ -1,0 +1,100 @@
+.
+├── .github
+├── dist
+├── node_modules
+│   ├── assets/
+│   ├── fonts/
+│   ├── images/
+│   ├── index.html
+│   ├── manifest.webmanifest
+│   ├── registerSW.js
+│   ├── sw.js
+│   ├── vite.svg
+│   ├── workbox-5ffe50d2.js
+├── public
+│   ├── fonts
+│   │   ├── LufgaBlack.woff
+│   │   ├── LufgaBlackItalic.woff
+│   │   ├── LufgaBold.woff
+│   │   ├── LufgaBoldItalic.woff
+│   │   ├── LufgaExtraBold.woff
+│   │   ├── LufgaExtraBoldItalic.woff
+│   │   ├── LufgaExtraLight.woff
+│   │   ├── LufgaExtraLightItalic.woff
+│   │   ├── LufgaItalic.woff
+│   │   ├── LufgaLight.woff
+│   │   ├── LufgaLightItalic.woff
+│   │   ├── LufgaMedium.woff
+│   │   ├── LufgaMediumItalic.woff
+│   │   ├── LufgaRegular.woff
+│   │   ├── LufgaSemiBold.woff
+│   │   ├── LufgaSemiBoldItalic.woff
+│   │   ├── LufgaThin.woff
+│   │   └── LufgaThinItalic.woff
+│   ├── images
+│   │   ├── blog
+│   │   ├── brand
+│   │   ├── contact
+│   │   ├── icons
+│   │   ├── products
+│   │   └── screenshots
+│   │── manifest.webmanifest
+│   │── pothe.svg
+│   └── sw.js
+├── src
+│   ├── App.jsx
+│   ├── assets
+│   │   └── react.svg
+│   ├── components
+│   │   ├── common
+│   │   ├── layout
+│   │   ├── providers
+│   │   ├── sections
+│   │   └── ui
+│   ├── data
+│   │   ├── blog-posts.js
+│   │   ├── categories.js
+│   │   ├── filters.js
+│   │   ├── joys.js
+│   │   ├── products.js
+│   │   └── testimonials.js
+│   ├── hooks
+│   │   ├── useFilters.js
+│   │   ├── useLocalStorage.js
+│   │   ├── usePagination.js
+│   │   ├── useProducts.js
+│   │   ├── useResponsive.js
+│   │   └── useTheme.js
+│   ├── main.jsx
+│   ├── pages
+│   │   ├── Blog.jsx
+│   │   ├── Conocenos.jsx
+│   │   ├── Contacto.jsx
+│   │   ├── Delicias.jsx
+│   │   ├── Eventos.jsx
+│   │   ├── Home.jsx
+│   │   ├── ProductDetail.jsx
+│   │   └── Sabores.jsx
+│   ├── store
+│   │   ├── filtersStore.js
+│   │   ├── joysStore.js
+│   │   ├── navigationStore.js
+│   │   ├── productsStore.js
+│   │   └── themeStore.js
+│   ├── styles
+│   │   ├── animations.css
+│   │   ├── components.css
+│   │   └── globals.css
+│   └── utils
+│       ├── animations.js
+│       ├── constants.js
+│       ├── helpers.js
+│       ├── productHelpers.js
+│       └── searchHelpers.js
+├── README.md
+├── eslint.config.js
+├── estructura.txt
+├── index.html
+├── package-lock.json
+├── package.json
+└── vite.config.js
