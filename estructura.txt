@@ -1,16 +1,6 @@
 .
 ├── .github
-├── dist
 ├── node_modules
-│   ├── assets/
-│   ├── fonts/
-│   ├── images/
-│   ├── index.html
-│   ├── manifest.webmanifest
-│   ├── registerSW.js
-│   ├── sw.js
-│   ├── vite.svg
-│   ├── workbox-5ffe50d2.js
 ├── public
 │   ├── fonts
 │   │   ├── LufgaBlack.woff

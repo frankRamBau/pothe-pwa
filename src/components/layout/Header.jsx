@@ -29,9 +29,9 @@ const Header = () => {
             </Link>
 
             {/* Search Bar - Desktop */}
-            <div className="hidden md:flex flex-1 max-w-md mx-8">
+            {/* <div className="hidden md:flex flex-1 max-w-md mx-8">
               <SearchBar />
-            </div>
+            </div> */}
 
             {/* Theme Toggle */}
             <div className="flex items-center space-x-4">

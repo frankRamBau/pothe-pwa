@@ -119,7 +119,7 @@ const EventsPreview = () => {
           >
             <div className="relative overflow-hidden rounded-2xl">
               <img
-                src="../public/images/brand/eventos.jpg"
+                src="/pothe-pwa/images/brand/eventos.jpg"
                 alt="XV años en Queretaro - Servicio de helados gourmet"
                 className="w-full h-[400px] lg:h-[500px] object-cover"
                 loading="lazy"
@@ -142,16 +142,8 @@ const EventsPreview = () => {
               </div>
             </div>
 
-            {/* Elemento decorativo */}
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-salmon-200 dark:bg-salmon-800 rounded-full opacity-60 blur-xl"></div>
           </motion.div>
         </div>
-      </div>
-
-      {/* Patrón de fondo decorativo */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-morado-300 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-24 h-24 bg-salmon-300 rounded-full blur-2xl"></div>
       </div>
     </section>
   );

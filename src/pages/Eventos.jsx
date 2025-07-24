@@ -53,8 +53,9 @@
 
 // export default Eventos
 
-import React, { useState } from 'react'
-import { ChevronLeft, ChevronRight, MessageCircle, Star, Users, Calendar, MapPin, Heart, GraduationCap, Baby, Crown, PartyPopper, TreePine } from 'lucide-react'
+import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight, MessageCircle, Star, Users, Calendar, MapPin, Heart, GraduationCap, Baby, Crown, PartyPopper, TreePine } from 'lucide-react';
+import HeaderMobile from '../components/layout/HeaderMobile'
 
 const Eventos = () => {
   const [currentSlide, setCurrentSlide] = useState({
@@ -171,6 +172,8 @@ const Eventos = () => {
   }
 
   return (
+    <>
+    <HeaderMobile />
     <div className="min-h-screen bg-gradient-to-br from-crema-50 via-salmon-50 to-morado-50 dark:from-gray-900 dark:via-morado-900 dark:to-salmon-900 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -299,6 +302,7 @@ const Eventos = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

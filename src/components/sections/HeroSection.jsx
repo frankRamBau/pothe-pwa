@@ -109,7 +109,7 @@ const HeroSection = () => {
       subtitle: 'Nuevos helados artesanales',
       description: 'Descubre nuestros sabores únicos hechos con ingredientes frescos',
       buttonText: 'Ver Sabores',
-      buttonLink: '/sabores',
+      buttonLink: '/pothe-pwa/sabores',
       alt: 'helados-temporada'
     },
     {
@@ -119,7 +119,7 @@ const HeroSection = () => {
       subtitle: 'Celebra con nosotros',
       description: 'Organizamos tu evento con los mejores helados artesanales',
       buttonText: 'Reservar Evento',
-      buttonLink: '/eventos',
+      buttonLink: '/pothe-pwa/eventos',
       alt: 'eventos-especiales'
     }
     // {

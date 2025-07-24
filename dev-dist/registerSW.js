@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) navigator.serviceWorker.register('/pothe-pwa/dev-sw.js?dev-sw', { scope: '/pothe-pwa/', type: 'classic' })

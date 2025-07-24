@@ -6,21 +6,15 @@ export const products = [
     name: "Baileys",
     category: "helado",
     description: "Helado cremoso con sabor a licor Baileys.",
-    image: "../images/products/helados_pothe.jpg",
-    rating: 4.8,
-    reviews: 127,
-    tags: ["cremoso", "delicioso", "gourmet"],
-    sizes: [
-      { size: "chico", price: 30 },
-      { size: "mediano", price: 46 },
-      { size: "grande", price: 62 },
-      { size: "medio_litro", price: 85 },
-      { size: "litro", price: 148 }
+    images: [
+      "/pothe-pwa/images/products/helados_pothe-sample.jpg",
+      "/pothe-pwa/images/products/Baileys.jpg",
     ],
+    tags: ["cremoso", "delicioso", "gourmet"],
     nutritionalInfo: ["Contiene alcohol", "Contiene lácteos"],
-    isNew: false,
-    isTrending: false,
-    badge: "Más Vendido",
+    // isNew: false,
+    // isTrending: true,
+    badge: "",
     seasonal: false,
     featured: false
   },
@@ -31,19 +25,11 @@ export const products = [
     category: "helado",
     subcategory: "gourmet",
     description: "Helado de plátano con un toque cósmico de sabor.",
-    image: "../images/products/helados_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
     tags: ["frutal", "original", "cremoso"],
-    sizes: [
-      { size: "chico", price: 30 },
-      { size: "mediano", price: 46 },
-      { size: "grande", price: 62 },
-      { size: "medio_litro", price: 85 },
-      { size: "litro", price: 148 }
-    ],
     nutritionalInfo: ["Contiene fruta", "Contiene lácteos"],
-    isNew: true,
-    isTrending: false,
+    // isNew: true,
+    // isTrending: false,
     badge: "Nuevo",
     seasonal: false,
     featured: false
@@ -55,8 +41,8 @@ export const products = [
     category: "helado",
     subcategory: "gourmet",
     description: "Helado dulce con notas de bombón tostado.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["dulce", "marshmallow", "tostado"],
     sizes: [
       { size: "chico", price: 30 },
@@ -79,8 +65,8 @@ export const products = [
     category: "helado",
     subcategory: "gourmet",
     description: "Helado especiado con sabor a té chai.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.5,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["especias", "té", "exótico"],
     sizes: [
       { size: "chico", price: 30 },
@@ -100,8 +86,8 @@ export const products = [
     category: "helado",
     subcategory: "gourmet",
     description: "Inspirado en el clásico chocolate con leche en forma de conejo.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.9,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["chocolate", "cremoso", "infantil"],
     sizes: [
       { size: "chico", price: 30 },
@@ -121,8 +107,8 @@ export const products = [
     category: "helado",
     subcategory: "gourmet",
     description: "Clásico sabor de fresas frescas con crema batida.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.8,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["fruta", "cremoso", "fresco"],
     sizes: [
       { size: "chico", price: 30 },
@@ -142,8 +128,8 @@ export const products = [
     category: "helado",
     subcategory: "gourmet",
     description: "Sabor a chicle rosa que te hará volver a la infancia.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.4,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["chicle", "divertido", "dulce"],
     sizes: [
       { size: "chico", price: 30 },
@@ -163,8 +149,8 @@ export const products = [
     category: "helado",
     subcategory: "gourmet",
     description: "Helado con sabor a chocolate Kinder Sorpresa.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["chocolate", "infantil", "suave"],
     sizes: [
       { size: "chico", price: 30 },
@@ -184,8 +170,8 @@ export const products = [
     category: "helado",
     subcategory: "gourmet",
     description: "Helado de té verde japonés con sabor único.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["té", "japonés", "refrescante"],
     sizes: [
       { size: "chico", price: 30 },
@@ -205,8 +191,8 @@ export const products = [
     category: "helado",
     subcategory: "gourmet",
     description: "Helado floral con un delicado aroma a violetas.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.5,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["floral", "exótico", "aromático"],
     sizes: [
       { size: "chico", price: 30 },
@@ -226,8 +212,8 @@ export const products = [
     category: "helado",
     subcategory: "gourmet",
     description: "Helado intenso con sabor a trufa de chocolate.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.9,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["chocolate", "intenso", "gourmet"],
     sizes: [
       { size: "chico", price: 30 },
@@ -247,8 +233,8 @@ export const products = [
     category: "helado",
     subcategory: "gourmet",
     description: "Helado cremoso con piñón tostado.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["nuez", "cremoso", "mexicano"],
     sizes: [
       { size: "chico", price: 30 },
@@ -268,8 +254,8 @@ export const products = [
     category: "helado",
     subcategory: "gourmet",
     description: "Fusión de sabores tradicionales de Oaxaca.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.8,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["mexicano", "tradicional", "artesanal"],
     sizes: [
       { size: "chico", price: 30 },
@@ -289,8 +275,8 @@ export const products = [
     category: "helado",
     subcategory: "gourmet",
     description: "Exótico sabor oriental con raíz de taro.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.5,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["oriental", "suave", "diferente"],
     sizes: [
       { size: "chico", price: 30 },
@@ -310,8 +296,8 @@ export const products = [
     category: "helado",
     subcategory: "gourmet",
     description: "Helado con sabor a feria y algodón de azúcar.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.3,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["dulce", "infantil", "colorido"],
     sizes: [
       { size: "chico", price: 30 },
@@ -331,8 +317,8 @@ export const products = [
     category: "helado",
     subcategory: "gourmet",
     description: "Helado de pistacho auténtico con un sabor único.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["frutos secos", "verde", "cremoso"],
     sizes: [
       { size: "chico", price: 30 },
@@ -352,8 +338,8 @@ export const products = [
     category: "helado",
     subcategory: "gourmet",
     description: "Helado con sabor a pastel de queso.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["pastel", "dulce", "cremoso"],
     sizes: [
       { size: "chico", price: 30 },
@@ -373,8 +359,8 @@ export const products = [
     category: "helado",
     subcategory: "gourmet",
     description: "Dulce combinación de cajeta artesanal y nueces tostadas.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.8,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["tradicional", "nuez", "dulce"],
     sizes: [
       { size: "chico", price: 30 },
@@ -395,8 +381,8 @@ export const products = [
     category: "helado",
     subcategory: "premium",
     description: "Helado con sabor a arroz con leche tradicional, cremoso y dulce.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["tradicional", "cremoso", "dulce"],
     sizes: [
       { size: "chico", price: 30 },
@@ -416,8 +402,8 @@ export const products = [
     category: "helado",
     subcategory: "premium",
     description: "Delicado helado con sabor suave y dulce como un beso de ángel.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["suave", "dulce", "premium"],
     sizes: [
       { size: "chico", price: 30 },
@@ -437,8 +423,8 @@ export const products = [
     category: "helado",
     subcategory: "premium",
     description: "Helado de café con crocantes almendras tostadas.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.8,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["café", "nueces", "premium"],
     sizes: [
       { size: "chico", price: 30 },
@@ -459,8 +445,8 @@ export const products = [
     category: "helado",
     subcategory: "premium",
     description: "Helado inspirado en el chocolate y avellanas Ferrero Rocher.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.9,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["chocolate", "avellanas", "premium"],
     sizes: [
       { size: "chico", price: 30 },
@@ -480,8 +466,8 @@ export const products = [
     category: "helado",
     subcategory: "premium",
     description: "Helado con mezcla de frutos secos tostados y cremosos.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["nueces", "cremoso", "premium"],
     sizes: [
       { size: "chico", price: 30 },
@@ -501,8 +487,8 @@ export const products = [
     category: "helado",
     subcategory: "premium",
     description: "Helado inspirado en el dulce tradicional de mazapán.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["dulce", "tradicional", "premium"],
     sizes: [
       { size: "chico", price: 30 },
@@ -522,8 +508,8 @@ export const products = [
     category: "helado",
     subcategory: "premium",
     description: "Helado refrescante con sabor a menta y toque dulce.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.5,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["menta", "refrescante", "premium"],
     sizes: [
       { size: "chico", price: 30 },
@@ -543,8 +529,8 @@ export const products = [
     category: "helado",
     subcategory: "premium",
     description: "Helado cremoso de queso Philadelphia con zarzamora natural.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.8,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["queso", "fruta", "premium"],
     sizes: [
       { size: "chico", price: 30 },
@@ -564,8 +550,8 @@ export const products = [
     category: "helado",
     subcategory: "premium",
     description: "Helado inspirado en el dulce Raffaello, con coco y almendra.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.9,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["coco", "almendra", "premium"],
     sizes: [
       { size: "chico", price: 30 },
@@ -585,8 +571,8 @@ export const products = [
     category: "helado",
     subcategory: "premium",
     description: "Helado cremoso de yogurt griego con mezcla de frutos rojos frescos.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["yogurt", "frutas", "saludable"],
     sizes: [
       { size: "chico", price: 30 },
@@ -607,8 +593,8 @@ export const products = [
     category: "helado",
     subcategory: "tradicional",
     description: "Helado con sabor a chocolate tradicional tipo Abuelita, intenso y cremoso.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.8,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["chocolate", "tradicional", "cremoso"],
     sizes: [
       { size: "chico", price: 25 },
@@ -628,8 +614,8 @@ export const products = [
     category: "helado",
     subcategory: "tradicional",
     description: "Dulce helado de cajeta artesanal, típico sabor mexicano.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["dulce", "tradicional", "mexicano"],
     sizes: [
       { size: "chico", price: 25 },
@@ -649,8 +635,8 @@ export const products = [
     category: "helado",
     subcategory: "tradicional",
     description: "Helado de vainilla con trozos crujientes de chocolate.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["vainilla", "chocolate", "crujiente"],
     sizes: [
       { size: "chico", price: 25 },
@@ -670,8 +656,8 @@ export const products = [
     category: "helado",
     subcategory: "tradicional",
     description: "Helado clásico de fresa con sabor dulce y fresco.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.5,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["fruta", "dulce", "clásico"],
     sizes: [
       { size: "chico", price: 25 },
@@ -691,8 +677,8 @@ export const products = [
     category: "helado",
     subcategory: "tradicional",
     description: "Helado tradicional con sabor a mamey dulce y cremoso.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["fruta", "cremoso", "tradicional"],
     sizes: [
       { size: "chico", price: 25 },
@@ -712,8 +698,8 @@ export const products = [
     category: "helado",
     subcategory: "tradicional",
     description: "Helado de vainilla con trozos de galleta Oreo.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["galleta", "chocolate", "cremoso"],
     sizes: [
       { size: "chico", price: 25 },
@@ -733,8 +719,8 @@ export const products = [
     category: "helado",
     subcategory: "tradicional",
     description: "Helado con sabor a pay de limón, refrescante y cremoso.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["cítrico", "cremoso", "tradicional"],
     sizes: [
       { size: "chico", price: 25 },
@@ -755,8 +741,8 @@ export const products = [
     category: "helado",
     subcategory: "tradicional",
     description: "Helado cremoso con sabor a queso fresco tradicional.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.4,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["queso", "cremoso", "tradicional"],
     sizes: [
       { size: "chico", price: 25 },
@@ -776,8 +762,8 @@ export const products = [
     category: "helado",
     subcategory: "tradicional",
     description: "Helado clásico de vainilla, suave y cremoso.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["vainilla", "clásico", "cremoso"],
     sizes: [
       { size: "chico", price: 25 },
@@ -797,8 +783,8 @@ export const products = [
     category: "helado",
     subcategory: "tradicional",
     description: "Helado con trozos de nuez y sabor cremoso y dulce.",
-    image: "../public/images/products/helados_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/helados_pothe.jpg",
+    
     tags: ["nueces", "cremoso", "dulce"],
     sizes: [
       { size: "chico", price: 25 },
@@ -819,8 +805,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve artesanal con sabor a coco fresco y natural.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["coco", "natural", "refrescante"],
     sizes: [
       { size: "chico", price: 20 },
@@ -840,8 +826,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve artesanal con sabor a durazno fresco y dulce.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["durazno", "fruta", "natural"],
     sizes: [
       { size: "chico", price: 20 },
@@ -861,8 +847,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Mezcla tropical de sabores frutales para una experiencia refrescante.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.8,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["tropical", "frutas", "refrescante"],
     sizes: [
       { size: "chico", price: 20 },
@@ -882,8 +868,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve artesanal con auténtico sabor a fresa fresca.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["fresa", "natural", "refrescante"],
     sizes: [
       { size: "chico", price: 20 },
@@ -903,8 +889,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve con mezcla de frutos rojos frescos y naturales.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["frutos rojos", "fruta", "natural"],
     sizes: [
       { size: "chico", price: 20 },
@@ -924,8 +910,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve artesanal con sabor a garambullo, fruta típica mexicana.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.5,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["fruta", "tradicional", "natural"],
     sizes: [
       { size: "chico", price: 20 },
@@ -945,8 +931,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve con delicioso sabor a guanábana fresco y natural.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["fruta", "refrescante", "natural"],
     sizes: [
       { size: "chico", price: 20 },
@@ -966,8 +952,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve artesanal con sabor a flor de Jamaica, refrescante y ácido.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["flor de jamaica", "ácido", "natural"],
     sizes: [
       { size: "chico", price: 20 },
@@ -987,8 +973,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve con sabor a guayaba fresca, dulce y natural.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["fruta", "dulce", "natural"],
     sizes: [
       { size: "chico", price: 20 },
@@ -1008,8 +994,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve fresca y dulce con auténtico sabor a jícama.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.5,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["fruta", "refrescante", "natural"],
     sizes: [
       { size: "chico", price: 20 },
@@ -1029,8 +1015,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve artesanal con sabor a kiwi, dulce y ligeramente ácido.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["fruta", "ácido", "natural"],
     sizes: [
       { size: "chico", price: 20 },
@@ -1050,8 +1036,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve refrescante con intenso sabor a limón natural.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.8,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["cítrico", "refrescante", "natural"],
     sizes: [
       { size: "chico", price: 20 },
@@ -1071,8 +1057,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve artesanal con sabor dulce y tropical de mango.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["fruta", "dulce", "tropical"],
     sizes: [
       { size: "chico", price: 20 },
@@ -1092,8 +1078,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve refrescante con sabor a hierbabuena natural y fresca.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["menta", "refrescante", "natural"],
     sizes: [
       { size: "chico", price: 20 },
@@ -1113,8 +1099,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve con sabor a manzana verde, dulce y ligeramente ácida.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["fruta", "ácido", "dulce"],
     sizes: [
       { size: "chico", price: 20 },
@@ -1134,8 +1120,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve artesanal con sabor a maracuyá, exótico y refrescante.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["fruta", "tropical", "ácido"],
     sizes: [
       { size: "chico", price: 20 },
@@ -1155,8 +1141,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve fresca y ligera con sabor a pepino natural.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.5,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["refrescante", "natural", "ligero"],
     sizes: [
       { size: "chico", price: 20 },
@@ -1177,8 +1163,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve artesanal con sabor a fresa con toque picante.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["fresa", "picante", "natural"],
     sizes: [
       { size: "chico", price: 20 },
@@ -1198,8 +1184,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve inspirada en el sabor del popular dulce Pulparindo, dulce y ácido.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["dulce", "ácido", "tradicional"],
     sizes: [
       { size: "chico", price: 20 },
@@ -1219,8 +1205,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve tradicional con sabor dulce y refrescante de tamborcito.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.5,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["dulce", "tradicional", "natural"],
     sizes: [
       { size: "chico", price: 20 },
@@ -1240,8 +1226,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve artesanal con sabor a zanahoria fresca y dulce.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.5,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["vegetal", "dulce", "natural"],
     sizes: [
       { size: "chico", price: 20 },
@@ -1261,8 +1247,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve refrescante con sabor a sandía natural y dulce.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.8,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["fruta", "refrescante", "natural"],
     sizes: [
       { size: "chico", price: 20 },
@@ -1282,8 +1268,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve con sabor a tamarindo, dulce y ácido, muy tradicional.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["dulce", "ácido", "tradicional"],
     sizes: [
       { size: "chico", price: 20 },
@@ -1303,8 +1289,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve refrescante con auténtico sabor a piña dulce y ácida.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.8,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["fruta", "dulce", "ácido"],
     sizes: [
       { size: "chico", price: 20 },
@@ -1324,8 +1310,8 @@ export const products = [
     category: "nieve",
     subcategory: "artesanal",
     description: "Nieve artesanal con sabor a naranja natural y refrescante.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["cítrico", "natural", "refrescante"],
     sizes: [
       { size: "chico", price: 20 },
@@ -1346,8 +1332,8 @@ export const products = [
     category: "nieve",
     subcategory: "con alcohol",
     description: "Nieve artesanal con el clásico sabor a Cuba Libre, mezcla de ron, cola y limón.",
-    image: "../public/images/products/nieves_pothe.jpgg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpgg",
+    
     tags: ["alcohol", "refrescante", "clásico"],
     sizes: [
       { size: "chico", price: 30 },
@@ -1367,8 +1353,8 @@ export const products = [
     category: "nieve",
     subcategory: "con alcohol",
     description: "Nieve fresca con el sabor a mojito: ron, hierbabuena y limón.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["alcohol", "menta", "refrescante"],
     sizes: [
       { size: "chico", price: 30 },
@@ -1388,8 +1374,8 @@ export const products = [
     category: "nieve",
     subcategory: "con alcohol",
     description: "Nieve artesanal con sabor a tamarindo y vodka Smirnoff, dulce y ácido.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.5,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["alcohol", "dulce", "ácido"],
     sizes: [
       { size: "chico", price: 30 },
@@ -1409,8 +1395,8 @@ export const products = [
     category: "nieve",
     subcategory: "con alcohol",
     description: "Nieve artesanal con el característico sabor de tequila, ideal para los amantes del agave.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["alcohol", "fuerte", "tradicional"],
     sizes: [
       { size: "chico", price: 30 },
@@ -1430,8 +1416,8 @@ export const products = [
     category: "nieve",
     subcategory: "con alcohol",
     description: "Nieve artesanal con mezcla de frutas y vino blanco, refrescante y deliciosa.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.8,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["alcohol", "frutal", "refrescante"],
     sizes: [
       { size: "chico", price: 30 },
@@ -1452,8 +1438,8 @@ export const products = [
     category: "temporada",
     subcategory: "sabores de temporada",
     description: "Nieve artesanal con sabor a cempasúchil, una flor tradicional en temporada de Día de Muertos.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["floral", "tradicional", "único"],
     sizes: [
       { size: "chico", price: 25 },
@@ -1473,8 +1459,8 @@ export const products = [
     category: "temporada",
     subcategory: "sabores de temporada",
     description: "Nieve artesanal con sabor a chocolate abuelita, ideal para la temporada de frío.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.8,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["chocolate", "tradicional", "dulce"],
     sizes: [
       { size: "chico", price: 25 },
@@ -1494,8 +1480,8 @@ export const products = [
     category: "temporada",
     subcategory: "sabores de temporada",
     description: "Nieve artesanal con sabor a pan de muerto, tradicional en la celebración del Día de Muertos.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.7,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["tradicional", "dulce", "único"],
     sizes: [
       { size: "chico", price: 25 },
@@ -1515,8 +1501,8 @@ export const products = [
     category: "temporada",
     subcategory: "sabores de temporada",
     description: "Variedad de sabores especiales disponibles solo en temporada.",
-    image: "../public/images/products/nieves_pothe.jpg",
-    rating: 4.4,
+    image: "/pothe-pwa/images/products/nieves_pothe.jpg",
+    
     tags: ["temporada", "variedad", "limitado"],
     sizes: [
       { size: "chico", price: 25 },
@@ -1537,8 +1523,8 @@ export const products = [
     name: "Limón",
     category: "paletas",
     description: "Ingredientes naturales y saludables",
-    image: "../public/images/products/paletas_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/paletas_pothe.jpg",
+    
     tags: ["refrescante", "único"],
     sizes: [
       { size: "chico", price: 25 },
@@ -1559,8 +1545,8 @@ export const products = [
     name: "Lomitos",
     category: "petfriendly",
     description: "Ingredientes naturales y saludables",
-    image: "../public/images/products/pet-friendly_pothe.jpg",
-    rating: 4.6,
+    image: "/pothe-pwa/images/products/pet-friendly_pothe.jpg",
+    
     tags: ["refrescante", "mascotas", "único"],
     sizes: [
       { size: "chico", price: 25 },

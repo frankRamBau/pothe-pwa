@@ -1,6 +1,7 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Heart, Users, Award, Leaf } from 'lucide-react'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Heart, Users, Award, Leaf } from 'lucide-react';
+import HeaderMobile from '../components/layout/HeaderMobile';
 
 const Conocenos = () => {
   const valores = [
@@ -27,6 +28,8 @@ const Conocenos = () => {
   ]
 
   return (
+    <>
+    <HeaderMobile />
     <div className="min-h-screen py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
@@ -54,7 +57,7 @@ const Conocenos = () => {
           <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-morado-500/20 to-salmon-500/20 z-10"></div>
             <img 
-              src="/images/brand/team-hero.jpg" 
+              src="/pothe-pwa/images/brand/team-hero.jpg" 
               alt="Equipo Pöthe"
               className="w-full h-full object-cover"
             />
@@ -196,6 +199,7 @@ const Conocenos = () => {
         </motion.div>
       </div>
     </div>
+    </>
   )
 }
 

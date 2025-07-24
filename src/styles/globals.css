@@ -211,3 +211,31 @@ body {
   visibility: visible;
 }
 */
+
+/* Añade esto a tu archivo CSS global (index.css o App.css) */
+
+/* Layer base para prevenir overflow global */
+@layer base {
+  html, body {
+    @apply overflow-x-hidden max-w-full;
+  }
+  
+  #root {
+    @apply overflow-x-hidden w-full;
+  }
+}
+
+/* Layer components para contenedores reutilizables */
+@layer components {
+  .safe-container {
+    @apply w-full max-w-full overflow-x-hidden px-4 sm:px-6 lg:px-8;
+  }
+  
+  .safe-section {
+    @apply w-full max-w-full overflow-x-hidden relative;
+  }
+  
+  .safe-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 w-full;
+  }
+}

@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
-import { MessageCircle, Phone, Mail, MapPin, Instagram, Facebook, Clock } from 'lucide-react'
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { MessageCircle, Phone, Mail, MapPin, Instagram, Facebook, Clock } from 'lucide-react';
+import HeaderMobile from '../components/layout/HeaderMobile'
 
 const Contacto = () => {
   const [selectedOption, setSelectedOption] = useState(null)
@@ -56,6 +57,8 @@ const Contacto = () => {
   ]
 
   return (
+    <>
+    <HeaderMobile />
     <div className="min-h-screen py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
@@ -79,7 +82,7 @@ const Contacto = () => {
               </div>
             </div>
             <img 
-              src="/images/contact/contact-hero.jpg" 
+              src="/pothe-pwa/images/contact/contact-hero.jpg" 
               alt="Contacto Pöthe"
               className="w-full h-full object-cover"
             />
@@ -214,6 +217,7 @@ const Contacto = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

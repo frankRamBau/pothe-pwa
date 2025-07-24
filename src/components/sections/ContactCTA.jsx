@@ -39,11 +39,6 @@ const ContactCTA = () => {
       {/* Background decorativo */}
       <div className="absolute inset-0 bg-gradient-to-br from-morado-50 via-crema-50 to-salmon-50 dark:from-morado-950 dark:via-morado-900 dark:to-salmon-950" />
       
-      {/* Elementos decorativos de fondo */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-morado-200/30 dark:bg-morado-700/30 rounded-full blur-xl" />
-      <div className="absolute bottom-10 right-10 w-32 h-32 bg-salmon-200/30 dark:bg-salmon-700/30 rounded-full blur-xl" />
-      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-crema-300/40 dark:bg-crema-600/40 rounded-full blur-lg" />
-
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           variants={containerVariants}
@@ -177,29 +172,6 @@ const ContactCTA = () => {
             </div>
           </motion.div>
         </motion.div>
-      </div>
-
-      {/* Efecto de partículas flotantes */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className={`absolute w-2 h-2 bg-morado-300/40 dark:bg-morado-600/40 rounded-full`}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [-20, 20, -20],
-              opacity: [0.4, 0.8, 0.4],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
       </div>
     </section>
   );

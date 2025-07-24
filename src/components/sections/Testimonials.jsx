@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Star, User } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const testimonialsData = [
   {
@@ -7,7 +8,7 @@ const testimonialsData = [
     name: "María González",
     rating: 5,
     comment: "Los helados de Pöthe son simplemente increíbles. El sabor Baileys es mi favorito, ¡tiene el balance perfecto!",
-    avatar: null, // Se usará ícono de usuario por defecto
+    avatar: null,
     location: "Pachuca, Hidalgo"
   },
   {
@@ -35,8 +36,8 @@ const StarRating = ({ rating }) => {
         <Star
           key={index}
           className={`w-4 h-4 ${
-            index < rating 
-              ? 'fill-yellow-400 text-yellow-400' 
+            index < rating
+              ? 'fill-yellow-400 text-yellow-400'
               : 'text-gray-300 dark:text-gray-600'
           }`}
         />
@@ -50,24 +51,21 @@ const TestimonialCard = ({ testimonial, index }) => {
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ 
-        duration: 0.6, 
+      transition={{
+        duration: 0.6,
         delay: index * 0.1,
         ease: "easeOut"
       }}
       viewport={{ once: true }}
       className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700"
     >
-      {/* Header del testimonial */}
       <div className="flex items-start gap-4 mb-4">
-        {/* Avatar */}
         <div className="flex-shrink-0">
           <div className="w-12 h-12 bg-gradient-to-br from-morado-400 to-morado-600 rounded-full flex items-center justify-center">
             <User className="w-6 h-6 text-white" />
           </div>
         </div>
-        
-        {/* Info del usuario */}
+
         <div className="flex-1">
           <h4 className="font-lufga font-semibold text-gray-900 dark:text-white">
             {testimonial.name}
@@ -78,8 +76,7 @@ const TestimonialCard = ({ testimonial, index }) => {
           <StarRating rating={testimonial.rating} />
         </div>
       </div>
-      
-      {/* Comentario */}
+
       <blockquote className="text-gray-600 dark:text-gray-300 italic leading-relaxed">
         "{testimonial.comment}"
       </blockquote>
@@ -88,10 +85,15 @@ const TestimonialCard = ({ testimonial, index }) => {
 };
 
 const Testimonials = () => {
+  const navigate = useNavigate();
+
+  const handleVerSabores = () => {
+    navigate('/sabores');
+  };
+
   return (
     <section className="py-16 bg-gradient-to-b from-crema-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4 max-w-6xl">
-        {/* Header de la sección */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -110,18 +112,16 @@ const Testimonials = () => {
           </p>
         </motion.div>
 
-        {/* Grid de testimonios */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonialsData.map((testimonial, index) => (
-            <TestimonialCard 
-              key={testimonial.id} 
-              testimonial={testimonial} 
+            <TestimonialCard
+              key={testimonial.id}
+              testimonial={testimonial}
               index={index}
             />
           ))}
         </div>
 
-        {/* CTA adicional */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -137,6 +137,7 @@ const Testimonials = () => {
               Visítanos y descubre por qué nuestros clientes siempre regresan por más.
             </p>
             <motion.button
+              onClick={handleVerSabores}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-white text-morado-600 font-semibold px-8 py-3 rounded-xl hover:bg-gray-50 transition-colors duration-300 shadow-lg"
