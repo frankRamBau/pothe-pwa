@@ -1,30 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/pothe-pwa/pothe.svg" />
-    <link rel="manifest" href="/pothe-pwa/manifest.webmanifest" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      // Manejar redirecciones desde 404.html para GitHub Pages SPA
-      (function() {
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        
-        if (redirect && redirect !== location.href) {
-          history.replaceState(null, null, redirect);
-        }
-      })();
-    </script>
-    <title>Pöthe</title>
-    <script type="module" crossorigin src="/pothe-pwa/assets/js/index.DO5EpDKU.js"></script>
-    <link rel="modulepreload" crossorigin href="/pothe-pwa/assets/js/vendor.BI3NJeJA.js">
-    <link rel="modulepreload" crossorigin href="/pothe-pwa/assets/js/router.D1StZdCd.js">
-    <link rel="modulepreload" crossorigin href="/pothe-pwa/assets/js/animations.CaBTV1nt.js">
-    <link rel="modulepreload" crossorigin href="/pothe-pwa/assets/js/store.4lhclUQv.js">
-    <link rel="stylesheet" crossorigin href="/pothe-pwa/assets/css/index.BWnP8vx9.css">
-  <link rel="manifest" href="/pothe-pwa/manifest.webmanifest"></head>
-  <body>
-    <div id="root"></div>
-  </body>
+ <head>
+   <meta charset="UTF-8" />
+   <link rel="icon" href="/pothe-pwa/pothe.svg" />
+   <link rel="manifest" href="/pothe-pwa/manifest.webmanifest" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   <!-- Meta tags básicos -->
+   <title>Pöthe - Heladeros desde 1974</title>
+   <meta name="description" content="Descubre nuestros deliciosos sabores de helados, nieves y paletas. Más de 80 sabores únicos para endulzar tus momentos especiales." />
+
+   <!-- Open Graph Meta Tags -->
+   <meta property="og:title" content="Pöthe - Heladeros desde 1974" />
+   <meta property="og:description" content="Descubre nuestros deliciosos sabores de helados, nieves y paletas. Más de 80 sabores únicos para endulzar tus momentos especiales." />
+   <meta property="og:image" content="https://frankrambau.github.io/pothe-pwa/images/share-pothe.jpg" />
+   <meta property="og:url" content="https://frankrambau.github.io/pothe-pwa/" />
+   <meta property="og:type" content="website" />
+   <meta property="og:site_name" content="Pöthe" />
+   <meta property="og:locale" content="es_MX" />
+
+   <!-- Twitter Card Meta Tags -->
+   <meta name="twitter:card" content="summary_large_image" />
+   <meta name="twitter:title" content="Pöthe - Heladeros desde 1974" />
+   <meta name="twitter:description" content="Descubre nuestros deliciosos sabores de helados, nieves y paletas. Más de 80 sabores únicos para endulzar tus momentos especiales." />
+   <meta name="twitter:image" content="https://frankrambau.github.io/pothe-pwa/images/share-pothe.jpg" />
+
+   <!-- Dimensiones de imagen para WhatsApp -->
+   <meta property="og:image:width" content="1200" />
+   <meta property="og:image:height" content="630" />
+   <meta property="og:image:type" content="image/jpeg" />
+
+   <script>
+     // Manejar redirecciones desde 404.html para GitHub Pages SPA
+     (function() {
+       var redirect = sessionStorage.redirect;
+       delete sessionStorage.redirect;
+       
+       if (redirect && redirect !== location.href) {
+         history.replaceState(null, null, redirect);
+       }
+     })();
+   </script>
+   <script type="module" crossorigin src="/pothe-pwa/assets/js/index.DO5EpDKU.js"></script>
+   <link rel="modulepreload" crossorigin href="/pothe-pwa/assets/js/vendor.BI3NJeJA.js">
+   <link rel="modulepreload" crossorigin href="/pothe-pwa/assets/js/router.D1StZdCd.js">
+   <link rel="modulepreload" crossorigin href="/pothe-pwa/assets/js/animations.CaBTV1nt.js">
+   <link rel="modulepreload" crossorigin href="/pothe-pwa/assets/js/store.4lhclUQv.js">
+   <link rel="stylesheet" crossorigin href="/pothe-pwa/assets/css/index.BWnP8vx9.css">
+ <link rel="manifest" href="/pothe-pwa/manifest.webmanifest"></head>
+ <body>
+   <div id="root"></div>
+ </body>
 </html>
