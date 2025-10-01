@@ -95,6 +95,197 @@
 
 // export default HeroSection
 
+// import React, { useState, useEffect } from 'react';
+// import { motion, AnimatePresence } from 'framer-motion';
+// import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+// const HeroSection = () => {
+//   // Slides con imágenes promocionales para helados
+//   const slides = [
+//     {
+//       id: 1,
+//       image: 'https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=800&h=400&fit=crop',
+//       title: 'Sabores de Temporada',
+//       subtitle: 'Nuevos helados artesanales',
+//       description: 'Descubre nuestros sabores únicos hechos con ingredientes frescos',
+//       buttonText: 'Ver Sabores',
+//       buttonLink: '/pothe-pwa/sabores',
+//       alt: 'helados-temporada'
+//     },
+//     {
+//       id: 2,
+//       image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&h=400&fit=crop',
+//       title: 'Eventos Especiales',
+//       subtitle: 'Celebra con nosotros',
+//       description: 'Organizamos tu evento con los mejores helados artesanales',
+//       buttonText: 'Reservar Evento',
+//       buttonLink: '/pothe-pwa/eventos',
+//       alt: 'eventos-especiales'
+//     }
+//     // {
+//     //   id: 3,
+//     //   image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800&h=400&fit=crop',
+//     //   title: 'Promociones',
+//     //   subtitle: '2x1 en helados familiares',
+//     //   description: 'Disfruta más pagando menos, válido todo el mes',
+//     //   buttonText: 'Ver Ofertas',
+//     //   buttonLink: '/promociones',
+//     //   alt: 'promociones-helados'
+//     // }
+//   ];
+
+//   const [currentSlide, setCurrentSlide] = useState(0);
+//   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+//   // Auto-play funcionalidad
+//   useEffect(() => {
+//     if (!isAutoPlaying) return;
+    
+//     const interval = setInterval(() => {
+//       setCurrentSlide((prev) => (prev + 1) % slides.length);
+//     }, 5000);
+
+//     return () => clearInterval(interval);
+//   }, [isAutoPlaying, slides.length]);
+
+//   const nextSlide = () => {
+//     setCurrentSlide((prev) => (prev + 1) % slides.length);
+//   };
+
+//   const prevSlide = () => {
+//     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+//   };
+
+//   const goToSlide = (index) => {
+//     setCurrentSlide(index);
+//   };
+
+//   return (
+//     <section className="relative overflow-hidden h-[500px] lg:h-[600px]">
+//       {/* Slider Container */}
+//       <div className="relative w-full h-full">
+//         <AnimatePresence mode="wait">
+//           <motion.div
+//             key={currentSlide}
+//             initial={{ opacity: 0, x: 100 }}
+//             animate={{ opacity: 1, x: 0 }}
+//             exit={{ opacity: 0, x: -100 }}
+//             transition={{ duration: 0.5 }}
+//             className="absolute inset-0"
+//             onMouseEnter={() => setIsAutoPlaying(false)}
+//             onMouseLeave={() => setIsAutoPlaying(true)}
+//           >
+//             {/* Background Image */}
+//             <div className="absolute inset-0">
+//               <img
+//                 src={slides[currentSlide].image}
+//                 alt={slides[currentSlide].alt}
+//                 className="w-full h-full object-cover"
+//               />
+//               <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+//             </div>
+
+//             {/* Content */}
+//             <div className="relative z-10 h-full flex items-center">
+//               <div className="container mx-auto px-4">
+//                 <div className="max-w-2xl">
+//                   <motion.div
+//                     initial={{ y: 30, opacity: 0 }}
+//                     animate={{ y: 0, opacity: 1 }}
+//                     transition={{ duration: 0.6, delay: 0.2 }}
+//                     className="text-salmon-400 font-semibold text-lg mb-2"
+//                   >
+//                     {slides[currentSlide].subtitle}
+//                   </motion.div>
+
+//                   <motion.h1
+//                     initial={{ y: 30, opacity: 0 }}
+//                     animate={{ y: 0, opacity: 1 }}
+//                     transition={{ duration: 0.6, delay: 0.3 }}
+//                     className="text-4xl lg:text-6xl font-lufga font-bold text-white mb-4"
+//                   >
+//                     {slides[currentSlide].title}
+//                   </motion.h1>
+
+//                   <motion.p
+//                     initial={{ y: 30, opacity: 0 }}
+//                     animate={{ y: 0, opacity: 1 }}
+//                     transition={{ duration: 0.6, delay: 0.4 }}
+//                     className="text-xl text-gray-200 mb-8 max-w-lg"
+//                   >
+//                     {slides[currentSlide].description}
+//                   </motion.p>
+
+//                   <motion.div
+//                     initial={{ y: 30, opacity: 0 }}
+//                     animate={{ y: 0, opacity: 1 }}
+//                     transition={{ duration: 0.6, delay: 0.5 }}
+//                   >
+//                     <motion.button
+//                       type="button"
+//                       whileHover={{ scale: 1.05 }}
+//                       whileTap={{ scale: 0.95 }}
+//                       onClick={() => window.location.href = slides[currentSlide].buttonLink}
+//                       className="bg-gradient-to-r from-morado-500 to-morado-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+//                     >
+//                       {slides[currentSlide].buttonText}
+//                     </motion.button>
+//                   </motion.div>
+//                 </div>
+//               </div>
+//             </div>
+//           </motion.div>
+//         </AnimatePresence>
+
+//         {/* Navigation Arrows */}
+//         <button
+//           onClick={prevSlide}
+//           className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-all duration-300 backdrop-blur-sm"
+//         >
+//           <ChevronLeft className="w-6 h-6" />
+//         </button>
+
+//         <button
+//           onClick={nextSlide}
+//           className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-all duration-300 backdrop-blur-sm"
+//         >
+//           <ChevronRight className="w-6 h-6" />
+//         </button>
+
+//         {/* Dots Navigation */}
+//         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
+//           {slides.map((_, index) => (
+//             <button
+//               key={index}
+//               onClick={() => goToSlide(index)}
+//               className={`w-3 h-3 rounded-full transition-all duration-300 ${
+//                 index === currentSlide
+//                   ? 'bg-white scale-125'
+//                   : 'bg-white/50 hover:bg-white/75'
+//               }`}
+//             />
+//           ))}
+//         </div>
+
+//         {/* Progress Bar */}
+//         <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
+//           <motion.div
+//             className="h-full bg-gradient-to-r from-morado-500 to-salmon-500"
+//             initial={{ width: '0%' }}
+//             animate={{ width: '100%' }}
+//             transition={{ duration: 5, ease: 'linear' }}
+//             key={currentSlide}
+//           />
+//         </div>
+//       </div>
+
+//     </section>
+//   );
+// };
+
+// export default HeroSection;
+
+
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -103,35 +294,25 @@ const HeroSection = () => {
   // Slides con imágenes promocionales para helados
   const slides = [
     {
+      id: 2,
+      image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&h=400&fit=crop',
+      title: 'Eventos especiales',
+      subtitle: 'Celebra con nosotros',
+      description: 'Organizamos tu evento con los mejores helados',
+      buttonText: 'Reservar Evento',
+      buttonLink: '/pothe-pwa/eventos',
+      alt: 'eventos-especiales'
+    },
+    {
       id: 1,
       image: 'https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=800&h=400&fit=crop',
-      title: 'Sabores de Temporada',
+      title: 'Sabores de temporada',
       subtitle: 'Nuevos helados artesanales',
       description: 'Descubre nuestros sabores únicos hechos con ingredientes frescos',
       buttonText: 'Ver Sabores',
       buttonLink: '/pothe-pwa/sabores',
       alt: 'helados-temporada'
-    },
-    {
-      id: 2,
-      image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&h=400&fit=crop',
-      title: 'Eventos Especiales',
-      subtitle: 'Celebra con nosotros',
-      description: 'Organizamos tu evento con los mejores helados artesanales',
-      buttonText: 'Reservar Evento',
-      buttonLink: '/pothe-pwa/eventos',
-      alt: 'eventos-especiales'
     }
-    // {
-    //   id: 3,
-    //   image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800&h=400&fit=crop',
-    //   title: 'Promociones',
-    //   subtitle: '2x1 en helados familiares',
-    //   description: 'Disfruta más pagando menos, válido todo el mes',
-    //   buttonText: 'Ver Ofertas',
-    //   buttonLink: '/promociones',
-    //   alt: 'promociones-helados'
-    // }
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -150,86 +331,91 @@ const HeroSection = () => {
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setIsAutoPlaying(false);
   };
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setIsAutoPlaying(false);
   };
 
   const goToSlide = (index) => {
     setCurrentSlide(index);
+    setIsAutoPlaying(false);
   };
 
   return (
-    <section className="relative overflow-hidden h-[500px] lg:h-[600px]">
+    <section className="relative w-full h-[55vh] min-h-[400px] max-h-[500px] md:h-[450px] lg:h-[480px] xl:h-[500px] overflow-hidden bg-gray-900">
       {/* Slider Container */}
       <div className="relative w-full h-full">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.5 }}
-            className="absolute inset-0"
-            onMouseEnter={() => setIsAutoPlaying(false)}
-            onMouseLeave={() => setIsAutoPlaying(true)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.7 }}
+            className="absolute inset-0 w-full h-full"
           >
             {/* Background Image */}
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 w-full h-full">
               <img
                 src={slides[currentSlide].image}
                 alt={slides[currentSlide].alt}
                 className="w-full h-full object-cover"
+                loading="eager"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+              {/* Overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
             </div>
 
             {/* Content */}
-            <div className="relative z-10 h-full flex items-center">
-              <div className="container mx-auto px-4">
-                <div className="max-w-2xl">
+            <div className="relative z-10 h-full flex items-center justify-center">
+              <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+                <div className="max-w-4xl mx-auto text-center">
+                  {/* Subtitle */}
                   <motion.div
-                    initial={{ y: 30, opacity: 0 }}
+                    initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-salmon-400 font-semibold text-lg mb-2"
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="text-salmon-500 font-semibold text-sm sm:text-base lg:text-lg mb-3 sm:mb-4 uppercase tracking-wider"
                   >
                     {slides[currentSlide].subtitle}
                   </motion.div>
 
+                  {/* Title */}
                   <motion.h1
-                    initial={{ y: 30, opacity: 0 }}
+                    initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    className="text-4xl lg:text-6xl font-lufga font-bold text-white mb-4"
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-lufga font-bold text-white mb-2 sm:mb-3 lg:mb-4 leading-none tracking-wide"
                   >
                     {slides[currentSlide].title}
                   </motion.h1>
 
+                  {/* Description */}
                   <motion.p
-                    initial={{ y: 30, opacity: 0 }}
+                    initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="text-xl text-gray-200 mb-8 max-w-lg"
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-100 mb-6 px-6 sm:mb-7 lg:mb-8 max-w-3xl mx-auto leading-relaxed font-light"
                   >
                     {slides[currentSlide].description}
                   </motion.p>
 
+                  {/* CTA Button */}
                   <motion.div
-                    initial={{ y: 30, opacity: 0 }}
+                    initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.5 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
                   >
-                    <motion.button
+                    <button
                       type="button"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
                       onClick={() => window.location.href = slides[currentSlide].buttonLink}
-                      className="bg-gradient-to-r from-morado-500 to-morado-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+                      className="inline-block bg-gradient-to-r from-morado-500 to-morado-600 hover:from-morado-600 hover:to-morado-700 text-white px-8 py-3.5 sm:px-10 sm:py-4 lg:px-12 lg:py-5 rounded-full font-semibold text-base sm:text-lg lg:text-xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 active:scale-95"
                     >
                       {slides[currentSlide].buttonText}
-                    </motion.button>
+                    </button>
                   </motion.div>
                 </div>
               </div>
@@ -240,45 +426,49 @@ const HeroSection = () => {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-all duration-300 backdrop-blur-sm"
+          aria-label="Slide anterior"
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-2 sm:p-2.5 rounded-full transition-all duration-300 hover:scale-110"
         >
-          <ChevronLeft className="w-6 h-6" />
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
 
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-all duration-300 backdrop-blur-sm"
+          aria-label="Siguiente slide"
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-2 sm:p-2.5 rounded-full transition-all duration-300 hover:scale-110"
         >
-          <ChevronRight className="w-6 h-6" />
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
 
         {/* Dots Navigation */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
+        <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              aria-label={`Ir al slide ${index + 1}`}
+              className={`transition-all duration-300 rounded-full ${
                 index === currentSlide
-                  ? 'bg-white scale-125'
-                  : 'bg-white/50 hover:bg-white/75'
+                  ? 'w-8 h-2.5 bg-white'
+                  : 'w-2.5 h-2.5 bg-white/50 hover:bg-white/75'
               }`}
             />
           ))}
         </div>
 
         {/* Progress Bar */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
-          <motion.div
-            className="h-full bg-gradient-to-r from-morado-500 to-salmon-500"
-            initial={{ width: '0%' }}
-            animate={{ width: '100%' }}
-            transition={{ duration: 5, ease: 'linear' }}
-            key={currentSlide}
-          />
-        </div>
+        {isAutoPlaying && (
+          <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10">
+            <motion.div
+              className="h-full bg-gradient-to-r from-morado-500 to-salmon-500"
+              initial={{ width: '0%' }}
+              animate={{ width: '100%' }}
+              transition={{ duration: 5, ease: 'linear' }}
+              key={`progress-${currentSlide}`}
+            />
+          </div>
+        )}
       </div>
-
     </section>
   );
 };

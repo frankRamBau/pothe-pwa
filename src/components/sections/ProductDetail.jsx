@@ -417,157 +417,357 @@
 // export default ProductDetail;
 
 // src/pages/ProductDetail.jsx
+// import { useEffect, useState } from 'react';
+// import { useParams, useNavigate } from 'react-router-dom';
+// import { useProductsStore } from '../store/productsStore';
+// import { ArrowLeft, Star, PawPrint, ShoppingCart } from 'lucide-react';
+// import { motion } from 'framer-motion';
+
+// const ProductDetail = () => {
+//   const { id } = useParams();
+//   const navigate = useNavigate();
+//   const { getProductById, getRelatedProducts } = useProductsStore();
+//   const [selectedSize, setSelectedSize] = useState(null);
+  
+//   const product = getProductById(id);
+//   const relatedProducts = getRelatedProducts(id);
+
+//   useEffect(() => {
+//     if (product && product.sizes.length > 0) {
+//       setSelectedSize(product.sizes[0]);
+//     }
+//   }, [product]);
+
+//   if (!product) {
+//     return (
+//       <div className="min-h-screen flex items-center justify-center">
+//         <div className="text-center">
+//           <h2 className="text-2xl font-bold mb-4">Producto no encontrado</h2>
+//           <button 
+//             onClick={() => navigate('/sabores')}
+//             className="text-purple-600 hover:text-purple-700"
+//           >
+//             Volver a sabores
+//           </button>
+//         </div>
+//       </div>
+//     );
+//   }
+
+//   return (
+//     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+//       <div className="container mx-auto px-4 py-8">
+//         {/* Botón volver */}
+//         <button
+//           onClick={() => navigate(-1)}
+//           className="flex items-center gap-2 mb-6 text-gray-600 hover:text-purple-600"
+//         >
+//           <ArrowLeft className="w-5 h-5" />
+//           Volver
+//         </button>
+
+//         <div className="grid lg:grid-cols-2 gap-8">
+//           {/* Imagen */}
+//           <motion.div
+//             initial={{ opacity: 0, x: -20 }}
+//             animate={{ opacity: 1, x: 0 }}
+//             className="aspect-square rounded-2xl overflow-hidden"
+//           >
+//             <img
+//               src={`/images/products/${product.image}`}
+//               alt={product.name}
+//               className="w-full h-full object-cover"
+//             />
+//           </motion.div>
+
+//           {/* Información */}
+//           <motion.div
+//             initial={{ opacity: 0, x: 20 }}
+//             animate={{ opacity: 1, x: 0 }}
+//             className="space-y-6"
+//           >
+//             <div>
+//               <div className="flex items-center gap-2 mb-2">
+//                 <span className="text-sm text-purple-600 font-medium capitalize">
+//                   {product.category} • {product.subcategory}
+//                 </span>
+//                 {product.petFriendly && <PawPrint className="w-4 h-4 text-green-500" />}
+//               </div>
+              
+//               <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
+              
+//               <div className="flex items-center gap-2 mb-4">
+//                 <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+//                 <span className="font-medium">{product.rating}</span>
+//               </div>
+              
+//               <p className="text-gray-600 dark:text-gray-400">
+//                 {product.description}
+//               </p>
+//             </div>
+
+//             {/* Tamaños y precios */}
+//             <div>
+//               <h3 className="text-lg font-semibold mb-3">Tamaños disponibles</h3>
+//               <div className="grid grid-cols-2 gap-3">
+//                 {product.sizes.map((sizeOption) => (
+//                   <button
+//                     key={sizeOption.size}
+//                     onClick={() => setSelectedSize(sizeOption)}
+//                     className={`p-3 rounded-lg border-2 text-left transition-colors ${
+//                       selectedSize?.size === sizeOption.size
+//                         ? 'border-purple-500 bg-purple-50 dark:bg-purple-900/20'
+//                         : 'border-gray-200 dark:border-gray-700 hover:border-purple-300'
+//                     }`}
+//                   >
+//                     <div className="font-medium capitalize">
+//                       {sizeOption.size.replace('_', ' ')}
+//                     </div>
+//                     <div className="text-lg font-bold text-purple-600">
+//                       ${sizeOption.price}
+//                     </div>
+//                   </button>
+//                 ))}
+//               </div>
+//             </div>
+
+//             {/* Información nutricional */}
+//             {product.nutritionalInfo && product.nutritionalInfo.length > 0 && (
+//               <div>
+//                 <h3 className="text-lg font-semibold mb-3">Información</h3>
+//                 <div className="flex flex-wrap gap-2">
+//                   {product.nutritionalInfo.map((info, index) => (
+//                     <span
+//                       key={index}
+//                       className="bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full text-sm"
+//                     >
+//                       {info}
+//                     </span>
+//                   ))}
+//                 </div>
+//               </div>
+//             )}
+
+//             {/* Tags */}
+//             {product.tags && product.tags.length > 0 && (
+//               <div>
+//                 <h3 className="text-lg font-semibold mb-3">Características</h3>
+//                 <div className="flex flex-wrap gap-2">
+//                   {product.tags.map((tag, index) => (
+//                     <span
+//                       key={index}
+//                       className="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full text-sm"
+//                     >
+//                       {tag}
+//                     </span>
+//                   ))}
+//                 </div>
+//               </div>
+//             )}
+//           </motion.div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default ProductDetail;
+
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useProductsStore } from '../store/productsStore';
 import { ArrowLeft, Star, PawPrint, ShoppingCart } from 'lucide-react';
 import { motion } from 'framer-motion';
+import SEOMetaTags from '../components/common/SEOMetaTags'; // ← Importar SEOMetaTags
 
 const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { getProductById, getRelatedProducts } = useProductsStore();
   const [selectedSize, setSelectedSize] = useState(null);
-  
-  const product = getProductById(id);
+
+  // Buscar producto por ID (string o number)
+  const product = getProductById(parseInt(id) || id);
   const relatedProducts = getRelatedProducts(id);
 
   useEffect(() => {
-    if (product && product.sizes.length > 0) {
+    if (product && product.sizes && product.sizes.length > 0) {
       setSelectedSize(product.sizes[0]);
     }
   }, [product]);
 
+  // Scroll to top cuando cambia el producto
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   if (!product) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold mb-4">Producto no encontrado</h2>
-          <button 
-            onClick={() => navigate('/sabores')}
-            className="text-purple-600 hover:text-purple-700"
-          >
-            Volver a sabores
-          </button>
+      <>
+        {/* SEO para página no encontrada */}
+        <SEOMetaTags 
+          title="Producto no encontrado - Pothe"
+          description="El producto que buscas no existe o ha sido movido."
+          url={`/producto/${id}`}
+        />
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold mb-4">Producto no encontrado</h2>
+            <button
+              onClick={() => navigate('/sabores')}
+              className="text-purple-600 hover:text-purple-700"
+            >
+              Volver a sabores
+            </button>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-8">
-        {/* Botón volver */}
-        <button
-          onClick={() => navigate(-1)}
-          className="flex items-center gap-2 mb-6 text-gray-600 hover:text-purple-600"
-        >
-          <ArrowLeft className="w-5 h-5" />
-          Volver
-        </button>
-
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Imagen */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="aspect-square rounded-2xl overflow-hidden"
+    <>
+      {/* SEO Meta Tags para el producto */}
+      <SEOMetaTags 
+        productData={product}
+        url={`/producto/${product.id}`}
+      />
+      
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto px-4 py-8">
+          {/* Botón volver */}
+          <button
+            onClick={() => navigate(-1)}
+            className="flex items-center gap-2 mb-6 text-gray-600 hover:text-purple-600"
           >
-            <img
-              src={`/images/products/${product.image}`}
-              alt={product.name}
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
+            <ArrowLeft className="w-5 h-5" />
+            Volver
+          </button>
 
-          {/* Información */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="space-y-6"
-          >
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-sm text-purple-600 font-medium capitalize">
-                  {product.category} • {product.subcategory}
-                </span>
-                {product.petFriendly && <PawPrint className="w-4 h-4 text-green-500" />}
-              </div>
-              
-              <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
-              
-              <div className="flex items-center gap-2 mb-4">
-                <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                <span className="font-medium">{product.rating}</span>
-              </div>
-              
-              <p className="text-gray-600 dark:text-gray-400">
-                {product.description}
-              </p>
-            </div>
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Imagen */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="aspect-square rounded-2xl overflow-hidden"
+            >
+              <img
+                src={product.image || product.images?.[0] || '/api/placeholder/400/400'}
+                alt={product.name}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.target.src = '/api/placeholder/400/400';
+                }}
+              />
+            </motion.div>
 
-            {/* Tamaños y precios */}
-            <div>
-              <h3 className="text-lg font-semibold mb-3">Tamaños disponibles</h3>
-              <div className="grid grid-cols-2 gap-3">
-                {product.sizes.map((sizeOption) => (
-                  <button
-                    key={sizeOption.size}
-                    onClick={() => setSelectedSize(sizeOption)}
-                    className={`p-3 rounded-lg border-2 text-left transition-colors ${
-                      selectedSize?.size === sizeOption.size
-                        ? 'border-purple-500 bg-purple-50 dark:bg-purple-900/20'
-                        : 'border-gray-200 dark:border-gray-700 hover:border-purple-300'
-                    }`}
-                  >
-                    <div className="font-medium capitalize">
-                      {sizeOption.size.replace('_', ' ')}
-                    </div>
-                    <div className="text-lg font-bold text-purple-600">
-                      ${sizeOption.price}
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Información nutricional */}
-            {product.nutritionalInfo && product.nutritionalInfo.length > 0 && (
+            {/* Información */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="space-y-6"
+            >
               <div>
-                <h3 className="text-lg font-semibold mb-3">Información</h3>
-                <div className="flex flex-wrap gap-2">
-                  {product.nutritionalInfo.map((info, index) => (
-                    <span
-                      key={index}
-                      className="bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full text-sm"
-                    >
-                      {info}
-                    </span>
-                  ))}
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-sm text-purple-600 font-medium capitalize">
+                    {product.category} {product.subcategory && `• ${product.subcategory}`}
+                  </span>
+                  {product.petFriendly && <PawPrint className="w-4 h-4 text-green-500" />}
                 </div>
-              </div>
-            )}
 
-            {/* Tags */}
-            {product.tags && product.tags.length > 0 && (
-              <div>
-                <h3 className="text-lg font-semibold mb-3">Características</h3>
-                <div className="flex flex-wrap gap-2">
-                  {product.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full text-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
+
+                {product.rating && (
+                  <div className="flex items-center gap-2 mb-4">
+                    <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <span className="font-medium">{product.rating}</span>
+                  </div>
+                )}
+
+                <p className="text-gray-600 dark:text-gray-400">
+                  {product.description}
+                </p>
               </div>
-            )}
-          </motion.div>
+
+              {/* Tamaños y precios */}
+              {product.sizes && product.sizes.length > 0 && (
+                <div>
+                  <h3 className="text-lg font-semibold mb-3">Tamaños disponibles</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    {product.sizes.map((sizeOption) => (
+                      <button
+                        key={sizeOption.size}
+                        onClick={() => setSelectedSize(sizeOption)}
+                        className={`p-3 rounded-lg border-2 text-left transition-colors ${
+                          selectedSize?.size === sizeOption.size
+                            ? 'border-purple-500 bg-purple-50 dark:bg-purple-900/20'
+                            : 'border-gray-200 dark:border-gray-700 hover:border-purple-300'
+                        }`}
+                      >
+                        <div className="font-medium capitalize">
+                          {sizeOption.size.replace('_', ' ')}
+                        </div>
+                        <div className="text-lg font-bold text-purple-600">
+                          ${sizeOption.price}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Precio simple */}
+              {product.price && !product.sizes && (
+                <div className="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-lg font-medium text-gray-700 dark:text-gray-300">
+                      Precio desde:
+                    </span>
+                    <span className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                      ${product.price}
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {/* Información nutricional */}
+              {product.nutritionalInfo && product.nutritionalInfo.length > 0 && (
+                <div>
+                  <h3 className="text-lg font-semibold mb-3">Información</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {product.nutritionalInfo.map((info, index) => (
+                      <span
+                        key={index}
+                        className="bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full text-sm"
+                      >
+                        {info}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Tags */}
+              {product.tags && product.tags.length > 0 && (
+                <div>
+                  <h3 className="text-lg font-semibold mb-3">Características</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {product.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full text-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </motion.div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

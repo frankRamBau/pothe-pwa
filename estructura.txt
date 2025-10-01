@@ -37,10 +37,47 @@
 │   │   └── react.svg
 │   ├── components
 │   │   ├── common
+│   │   │   ├── Carousel.jsx
+│   │   │   ├── ContactButtons.jsx
+│   │   │   ├── FilterSelector.jsx
+│   │   │   ├── ProductCard.jsx
+│   │   │   ├── ProductModal.jsx
+│   │   │   ├── SEOMetaTags.jsx
+│   │   │   ├── SearchBar.jsx
+│   │   │   ├── ThemeToggle.jsx
+│   │   │   └── UpdateNotification.jsx
 │   │   ├── layout
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Header.jsx
+│   │   │   ├── HeaderMobile.jsx
+│   │   │   ├── Layout.jsx
+│   │   │   ├── MobileNavigation.jsx
+│   │   │   └── Navigation.jsx
 │   │   ├── providers
+│   │   │   └── ThemeProvider.jsx
 │   │   ├── sections
+│   │   │   ├── BrandStory.jsx
+│   │   │   ├── ContactCTA.jsx
+│   │   │   ├── EmptyState.jsx
+│   │   │   ├── EventsPreview.jsx
+│   │   │   ├── FeaturedProducts.jsx
+│   │   │   ├── FiltersHeader.jsx
+│   │   │   ├── HeroSection.jsx
+│   │   │   ├── PartnersMarquee.jsx
+│   │   │   ├── ProductDetail.jsx
+│   │   │   ├── ProductsGrid.jsx
+│   │   │   ├── RelatedProducts.jsx
+│   │   │   └── Testimonials.jsx
 │   │   └── ui
+│   │       ├── Badge.jsx
+│   │       ├── Button.jsx
+│   │       ├── Card.jsx
+│   │       ├── FilterChip.jsx
+│   │       ├── LazyImage.jsx
+│   │       ├── LoadingSpinner.jsx
+│   │       ├── Modal.jsx
+│   │       ├── SearchInput.jsx
+│   │       └── index.js
 │   ├── data
 │   │   ├── blog-posts.js
 │   │   ├── categories.js
@@ -49,6 +86,7 @@
 │   │   ├── products.js
 │   │   └── testimonials.js
 │   ├── hooks
+│   │   ├── useAppUpdate.js
 │   │   ├── useFilters.js
 │   │   ├── useLocalStorage.js
 │   │   ├── usePagination.js
