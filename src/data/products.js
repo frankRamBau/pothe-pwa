@@ -615,7 +615,7 @@ export const products = [
   },
   {
     id: 28,
-    isFeatured: false,
+    isFeatured: true,
     name: "Platano con Nutella",
     category: "Helado Gourmet",
     description: "Combinación deliciosa de plátano maduro con la inconfundible crema de avellanas Nutella®, una mezcla cremosa y reconfortante.",
@@ -659,7 +659,7 @@ export const products = [
   },
   {
     id: 30,
-    isFeatured: false,
+    isFeatured: true,
     name: "Ramito de violetas",
     category: "Helado Gourmet",
     description: "Helado floral y delicado con esencia natural de violeta y un color lila característico. Inspirado en flores comestibles, es una experiencia única para los sentidos.",
@@ -1334,7 +1334,7 @@ export const products = [
   },
   {
     id: 61,
-    isFeatured: false,
+    isFeatured: true,
     name: "Limón",
     category: "nieve",
     description: "Sabor cítrico y refrescante a limón, ideal para refrescarte con un toque ácido y natural.",

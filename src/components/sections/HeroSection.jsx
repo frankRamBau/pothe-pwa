@@ -295,7 +295,7 @@ const HeroSection = () => {
   const slides = [
     {
       id: 2,
-      image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&h=400&fit=crop',
+      image: '/pothe-pwa/images/heroSection/hS-01.webp',
       title: 'Eventos especiales',
       subtitle: 'Celebra con nosotros',
       description: 'Organizamos tu evento con los mejores helados',
@@ -305,7 +305,7 @@ const HeroSection = () => {
     },
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=800&h=400&fit=crop',
+      image: '/pothe-pwa/images/heroSection/hS-02.webp',
       title: 'Sabores de temporada',
       subtitle: 'Nuevos helados artesanales',
       description: 'Descubre nuestros sabores únicos hechos con ingredientes frescos',
@@ -362,62 +362,60 @@ const HeroSection = () => {
               <img
                 src={slides[currentSlide].image}
                 alt={slides[currentSlide].alt}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-[center_80%]"
                 loading="eager"
               />
               {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
             </div>
 
             {/* Content */}
-            <div className="relative z-10 h-full flex items-center justify-center">
-              <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-                <div className="max-w-4xl mx-auto text-center">
-                  {/* Subtitle */}
-                  <motion.div
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-salmon-500 font-semibold text-sm sm:text-base lg:text-lg mb-3 sm:mb-4 uppercase tracking-wider"
-                  >
-                    {slides[currentSlide].subtitle}
-                  </motion.div>
+            <div className="relative z-10 h-full flex items-center justify-center px-4 sm:px-6 py-12 sm:py-16">
+              <div className="w-full max-w-5xl mx-auto text-center">
+                {/* Subtitle */}
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="text-salmon-500 font-semibold text-xs sm:text-sm md:text-base lg:text-lg mb-2 sm:mb-3 uppercase tracking-wider"
+                >
+                  {slides[currentSlide].subtitle}
+                </motion.div>
 
-                  {/* Title */}
-                  <motion.h1
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-lufga font-bold text-white mb-2 sm:mb-3 lg:mb-4 leading-none tracking-wide"
-                  >
-                    {slides[currentSlide].title}
-                  </motion.h1>
+                {/* Title */}
+                <motion.h1
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-lufga font-bold text-white mb-3 sm:mb-4 md:mb-5 leading-tight tracking-wide px-2"
+                >
+                  {slides[currentSlide].title}
+                </motion.h1>
 
-                  {/* Description */}
-                  <motion.p
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-100 mb-6 px-6 sm:mb-7 lg:mb-8 max-w-3xl mx-auto leading-relaxed font-light"
-                  >
-                    {slides[currentSlide].description}
-                  </motion.p>
+                {/* Description */}
+                <motion.p
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-100 mb-5 sm:mb-6 md:mb-7 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed font-light px-4"
+                >
+                  {slides[currentSlide].description}
+                </motion.p>
 
-                  {/* CTA Button */}
-                  <motion.div
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.5 }}
+                {/* CTA Button */}
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
+                  <button
+                    type="button"
+                    onClick={() => window.location.href = slides[currentSlide].buttonLink}
+                    className="inline-block bg-gradient-to-r from-morado-500 to-morado-600 hover:from-morado-600 hover:to-morado-700 text-white px-6 py-3 sm:px-8 sm:py-3.5 md:px-10 md:py-4 lg:px-12 lg:py-5 rounded-full font-semibold text-sm sm:text-base md:text-lg lg:text-xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 active:scale-95"
                   >
-                    <button
-                      type="button"
-                      onClick={() => window.location.href = slides[currentSlide].buttonLink}
-                      className="inline-block bg-gradient-to-r from-morado-500 to-morado-600 hover:from-morado-600 hover:to-morado-700 text-white px-8 py-3.5 sm:px-10 sm:py-4 lg:px-12 lg:py-5 rounded-full font-semibold text-base sm:text-lg lg:text-xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 active:scale-95"
-                    >
-                      {slides[currentSlide].buttonText}
-                    </button>
-                  </motion.div>
-                </div>
+                    {slides[currentSlide].buttonText}
+                  </button>
+                </motion.div>
               </div>
             </div>
           </motion.div>

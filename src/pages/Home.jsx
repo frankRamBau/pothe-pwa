@@ -83,6 +83,10 @@ import Testimonials from '../components/sections/Testimonials';
 import ContactCTA from '../components/sections/ContactCTA';
 import SEOMetaTags from '../components/common/SEOMetaTags'; // ← Importar SEOMetaTags
 // import PartnersMarquee from '../components/sections/PartnersMarquee'; // Comentado temporalmente
+import NaturalDifferentiator from '../components/sections/NaturalDifferentiator';
+import CategoryShowcase from '../components/sections/CategoryShowcase';
+import SocialProof from '../components/sections/SocialProof';
+import QuickContact from '../components/sections/QuickContact';
 
 const Home = () => {
   return (
@@ -106,20 +110,32 @@ const Home = () => {
             <FeaturedProducts products={products} />
           </section>
           <section className="safe-section">
+            <NaturalDifferentiator />
+          </section>
+          <section className="safe-section">
+            <CategoryShowcase />
+          </section>
+          <section className="safe-section">
             <EventsPreview />
           </section>
           <section className="safe-section">
-            <BrandStory />
+            <SocialProof />
           </section>
+          <section className="safe-section">
+            <QuickContact />
+          </section>
+          {/* <section className="safe-section">
+            <BrandStory />
+          </section> */}
           {/* <section className="safe-section">
             <PartnersMarquee />
           </section> */}
-          <section className="safe-section">
+          {/* <section className="safe-section">
             <Testimonials />
           </section>
           <section className="safe-section">
             <ContactCTA />
-          </section>
+          </section> */}
         </main>
       </div>
     </>
