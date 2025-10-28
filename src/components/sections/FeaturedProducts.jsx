@@ -609,11 +609,11 @@ const FeaturedProducts = ({ products = [] }) => {
 
   return (
     <>
-      <section className="py-52 lg:py-16 bg-gradient-to-br from-crema-50 via-white to-crema-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
+      <section className="py-12 lg:py-16 bg-gradient-to-br from-crema-50 via-white to-crema-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header Section - Simplificado */}
           <HeaderComponent 
-            className="text-center mb-8 lg:mb-12"
+            className="text-center mb-4 lg:mb-8"
             {...getAnimationProps({
               initial: { opacity: 0, y: -20 },
               whileInView: { opacity: 1, y: 0 },
@@ -621,7 +621,7 @@ const FeaturedProducts = ({ products = [] }) => {
               transition: { duration: 0.6 }
             })}
           >
-            <div className="flex items-center justify-center gap-2 mb-3">
+            <div className="flex items-center justify-center gap-2 mb-2">
               <Sparkles className="w-5 h-5 text-salmon-500" />
               <span className="text-salmon-600 dark:text-salmon-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">
                 Los Favoritos
@@ -629,7 +629,7 @@ const FeaturedProducts = ({ products = [] }) => {
               <Sparkles className="w-5 h-5 text-salmon-500" />
             </div>
             
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-morado-700 dark:text-white mb-3 font-lufga">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-morado-700 dark:text-white mb-2 font-lufga">
               Helados Más Populares
             </h2>
             
@@ -706,7 +706,7 @@ const FeaturedProducts = ({ products = [] }) => {
 
           {/* Bottom CTA */}
           <CTAComponent
-            className="text-center mt-10 lg:mt-12"
+            className="text-center mt-6 lg:mt-8"
             {...getAnimationProps({
               initial: { opacity: 0, y: 20 },
               whileInView: { opacity: 1, y: 0 },

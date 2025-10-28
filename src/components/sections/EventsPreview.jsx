@@ -151,11 +151,15 @@
 
 // export default EventsPreview;
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Calendar, Users, Cake, PartyPopper, ArrowRight } from 'lucide-react';
 
 const EventsPreview = () => {
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStartX, setDragStartX] = useState(0);
+
   const eventTypes = [
     {
       icon: <Cake className="w-6 h-6" />,
@@ -175,10 +179,25 @@ const EventsPreview = () => {
   ];
 
   const handleContactClick = () => {
-    // Puedes cambiar esto por el número de WhatsApp real
     const phoneNumber = '5212345678901'; // Reemplazar con número real
     const message = encodeURIComponent('Hola! Me gustaría cotizar helados para un evento');
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+  };
+
+  const handleMouseDown = (e) => {
+    setIsDragging(false);
+    setDragStartX(e.clientX);
+  };
+
+  const handleMouseMove = (e) => {
+    if (e.buttons === 1) {
+      const diff = Math.abs(e.clientX - dragStartX);
+      if (diff > 5) setIsDragging(true);
+    }
+  };
+
+  const handleMouseUp = () => {
+    setTimeout(() => setIsDragging(false), 100);
   };
 
   return (
@@ -244,15 +263,21 @@ const EventsPreview = () => {
                 Cotiza tu Evento
               </motion.button>
 
-              <motion.button
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.location.href = '/eventos'}
-                className="inline-flex items-center justify-center gap-2 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white border-2 border-gray-300 dark:border-gray-600 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-sm sm:text-base transition-all duration-300"
               >
-                Ver Más Detalles
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
+                <Link
+                  to="/eventos"
+                  className="inline-flex items-center justify-center gap-2 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white border-2 border-gray-300 dark:border-gray-600 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-sm sm:text-base transition-all duration-300"
+                  onMouseDown={handleMouseDown}
+                  onMouseMove={handleMouseMove}
+                  onMouseUp={handleMouseUp}
+                >
+                  Ver Más Detalles
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
 

@@ -294,7 +294,18 @@ const HeroSection = () => {
   // Slides con imágenes promocionales para helados
   const slides = [
     {
-      id: 2,
+      id: 7,
+      image: '/pothe-pwa/images/heroSection/2025/oct/hS-06.webp',
+      title: '',
+      mainSubtitle: 'Sabores de temporada',
+      subtitle: '',
+      description: 'Sabores naturales y frescos para todos',
+      buttonText: 'Ver Sabores',
+      buttonLink: '/pothe-pwa/sabores',
+      alt: 'helados-temporada'
+    },
+    {
+      id: 1,
       image: '/pothe-pwa/images/heroSection/hS-01.webp',
       title: 'Eventos especiales',
       subtitle: 'Celebra con nosotros',
@@ -304,11 +315,56 @@ const HeroSection = () => {
       alt: 'eventos-especiales'
     },
     {
-      id: 1,
-      image: '/pothe-pwa/images/heroSection/hS-02.webp',
-      title: 'Sabores de temporada',
+      id: 2,
+      image: '/pothe-pwa/images/heroSection/2025/oct/hS-01.webp',
+      title: '',
+      mainSubtitle: 'Sabores de temporada',
+      subtitle: '',
+      description: 'Sabores naturales y frescos para todos',
+      buttonText: 'Ver Sabores',
+      buttonLink: '/pothe-pwa/sabores',
+      alt: 'helados-temporada'
+    },
+    {
+      id: 3,
+      image: '/pothe-pwa/images/heroSection/2025/oct/hS-02.webp',
+      title: '',
+      mainSubtitle: 'Sabores de temporada',
+      subtitle: '',
+      description: 'Sabores naturales y frescos para todos',
+      buttonText: 'Ver Sabores',
+      buttonLink: '/pothe-pwa/sabores',
+      alt: 'helados-temporada'
+    },
+    {
+      id: 4,
+      image: '/pothe-pwa/images/heroSection/2025/oct/hS-03.webp',
+      title: '',
+      mainSubtitle: 'Sabores de temporada',
+      subtitle: '',
+      description: 'Sabores naturales y frescos para todos',
+      buttonText: 'Ver Sabores',
+      buttonLink: '/pothe-pwa/sabores',
+      alt: 'helados-temporada'
+    },
+    {
+      id: 5,
+      image: '/pothe-pwa/images/heroSection/2025/oct/hS-04.webp',
+      title: '',
+      mainSubtitle: 'La alegría en cada mordida',
+      subtitle: '',
+      description: 'Sabores naturales y frescos para todos',
+      buttonText: 'Ver Sabores',
+      buttonLink: '/pothe-pwa/sabores',
+      alt: 'helados-temporada'
+    },
+    {
+      id: 6,
+      image: '/pothe-pwa/images/heroSection/2025/oct/hS-05.webp',
+      title: '',
+      mainSubtitle: '',
       subtitle: 'Nuevos helados artesanales',
-      description: 'Descubre nuestros sabores únicos hechos con ingredientes frescos',
+      description: 'Sabores naturales y frescos para todos',
       buttonText: 'Ver Sabores',
       buttonLink: '/pothe-pwa/sabores',
       alt: 'helados-temporada'
@@ -317,6 +373,22 @@ const HeroSection = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detector de tamaño de pantalla para responsividad
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Comprobar al montar
+    handleResize();
+    
+    // Listener para cambios de tamaño
+    window.addEventListener('resize', handleResize);
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Auto-play funcionalidad
   useEffect(() => {
@@ -344,6 +416,14 @@ const HeroSection = () => {
     setIsAutoPlaying(false);
   };
 
+  // Función para determinar la posición del contenido
+  const shouldShowContentAtBottom = (slide) => {
+    return !slide.title || slide.title === '' || !slide.subtitle || slide.subtitle === '';
+  };
+
+  // Función para verificar si algún texto está presente
+  const hasText = (text) => text && text !== '';
+
   return (
     <section className="relative w-full h-[55vh] min-h-[400px] max-h-[500px] md:h-[450px] lg:h-[480px] xl:h-[500px] overflow-hidden bg-gray-900">
       {/* Slider Container */}
@@ -365,57 +445,123 @@ const HeroSection = () => {
                 className="w-full h-full object-cover object-[center_80%]"
                 loading="eager"
               />
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
+              {/* Overlay gradient - adaptado según posición del contenido */}
+              {shouldShowContentAtBottom(slides[currentSlide]) ? (
+                <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/70"></div>
+              ) : (
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
+              )}
             </div>
 
-            {/* Content */}
-            <div className="relative z-10 h-full flex items-center justify-center px-4 sm:px-6 py-12 sm:py-16">
-              <div className="w-full max-w-5xl mx-auto text-center">
-                {/* Subtitle */}
-                <motion.div
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="text-salmon-500 font-semibold text-xs sm:text-sm md:text-base lg:text-lg mb-2 sm:mb-3 uppercase tracking-wider"
-                >
-                  {slides[currentSlide].subtitle}
-                </motion.div>
+            {/* Content Container - posición varía según el tipo de slide */}
+            <div 
+              className={`relative z-10 h-full flex ${
+                shouldShowContentAtBottom(slides[currentSlide]) 
+                  ? 'items-end pb-16 sm:pb-20' 
+                  : 'items-center'
+              } justify-center px-4 sm:px-6`}
+            >
+              {/* Contenedor con ancho máximo en tablet/desktop, pero ancho completo en móvil */}
+              <div className={`w-full mx-auto text-center ${isMobile ? '' : 'max-w-4xl lg:max-w-5xl'}`}>
+                {/* DISEÑO PARA SLIDES CON TITLE Y SUBTITLE */}
+                {!shouldShowContentAtBottom(slides[currentSlide]) && (
+                  <div className="flex flex-col items-center">
+                    {hasText(slides[currentSlide].mainSubtitle) && (
+                      <motion.div
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="text-white font-semibold text-xs sm:text-sm md:text-base lg:text-lg mb-2 sm:mb-3 uppercase tracking-wider"
+                      >
+                        {slides[currentSlide].mainSubtitle}
+                      </motion.div>
+                    )}
+                    
+                    {hasText(slides[currentSlide].subtitle) && (
+                      <motion.div
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="text-salmon-500 font-semibold text-xs sm:text-sm md:text-base lg:text-lg mb-2 sm:mb-3 uppercase tracking-wider"
+                      >
+                        {slides[currentSlide].subtitle}
+                      </motion.div>
+                    )}
+                    
+                    {hasText(slides[currentSlide].title) && (
+                      <motion.h1
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-lufga font-bold text-white mb-3 sm:mb-4 md:mb-5 leading-tight tracking-wide"
+                      >
+                        {slides[currentSlide].title}
+                      </motion.h1>
+                    )}
+                    
+                    <motion.p
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                      className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-100 mb-4 sm:mb-5 md:mb-6 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed font-light"
+                    >
+                      {slides[currentSlide].description}
+                    </motion.p>
+                    
+                    <motion.div
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.5 }}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => window.location.href = slides[currentSlide].buttonLink}
+                        className="inline-block bg-gradient-to-r from-morado-500 to-morado-600 hover:from-morado-600 hover:to-morado-700 text-white px-6 py-3 sm:px-8 sm:py-3.5 md:px-10 md:py-4 rounded-full font-semibold text-sm sm:text-base md:text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 active:scale-95"
+                      >
+                        {slides[currentSlide].buttonText}
+                      </button>
+                    </motion.div>
+                  </div>
+                )}
 
-                {/* Title */}
-                <motion.h1
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-lufga font-bold text-white mb-3 sm:mb-4 md:mb-5 leading-tight tracking-wide px-2"
-                >
-                  {slides[currentSlide].title}
-                </motion.h1>
-
-                {/* Description */}
-                <motion.p
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-100 mb-5 sm:mb-6 md:mb-7 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed font-light px-4"
-                >
-                  {slides[currentSlide].description}
-                </motion.p>
-
-                {/* CTA Button */}
-                <motion.div
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                >
-                  <button
-                    type="button"
-                    onClick={() => window.location.href = slides[currentSlide].buttonLink}
-                    className="inline-block bg-gradient-to-r from-morado-500 to-morado-600 hover:from-morado-600 hover:to-morado-700 text-white px-6 py-3 sm:px-8 sm:py-3.5 md:px-10 md:py-4 lg:px-12 lg:py-5 rounded-full font-semibold text-sm sm:text-base md:text-lg lg:text-xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 active:scale-95"
-                  >
-                    {slides[currentSlide].buttonText}
-                  </button>
-                </motion.div>
+                {/* DISEÑO PARA SLIDES SIN TITLE O SUBTITLE - CONTENIDO EN LA PARTE INFERIOR */}
+                {shouldShowContentAtBottom(slides[currentSlide]) && (
+                  <div className="flex flex-col items-center">
+                    {hasText(slides[currentSlide].mainSubtitle) && (
+                      <motion.div
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="text-white font-bold text-base sm:text-lg md:text-xl lg:text-2xl mb-2 uppercase tracking-wider"
+                      >
+                        {slides[currentSlide].mainSubtitle}
+                      </motion.div>
+                    )}
+                    
+                    <motion.p
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
+                      className="text-sm sm:text-base md:text-lg text-white mb-3 sm:mb-4 max-w-xl lg:max-w-2xl mx-auto leading-relaxed"
+                    >
+                      {slides[currentSlide].description}
+                    </motion.p>
+                    
+                    <motion.div
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => window.location.href = slides[currentSlide].buttonLink}
+                        className="inline-block bg-gradient-to-r from-morado-500 to-morado-600 hover:from-morado-600 hover:to-morado-700 text-white px-6 py-2.5 sm:px-7 sm:py-3 md:px-9 md:py-3.5 rounded-full font-semibold text-sm sm:text-base shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 active:scale-95"
+                      >
+                        {slides[currentSlide].buttonText}
+                      </button>
+                    </motion.div>
+                  </div>
+                )}
               </div>
             </div>
           </motion.div>
@@ -425,7 +571,7 @@ const HeroSection = () => {
         <button
           onClick={prevSlide}
           aria-label="Slide anterior"
-          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-2 sm:p-2.5 rounded-full transition-all duration-300 hover:scale-110"
+          className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-2 sm:p-2.5 rounded-full transition-all duration-300 hover:scale-110"
         >
           <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
@@ -433,13 +579,13 @@ const HeroSection = () => {
         <button
           onClick={nextSlide}
           aria-label="Siguiente slide"
-          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-2 sm:p-2.5 rounded-full transition-all duration-300 hover:scale-110"
+          className="absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-2 sm:p-2.5 rounded-full transition-all duration-300 hover:scale-110"
         >
           <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
 
-        {/* Dots Navigation */}
-        <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+        {/* Dots Navigation - ajustado para que esté por encima del contenido inferior */}
+        <div className="absolute bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2 z-30 flex gap-2">
           {slides.map((_, index) => (
             <button
               key={index}
@@ -456,7 +602,7 @@ const HeroSection = () => {
 
         {/* Progress Bar */}
         {isAutoPlaying && (
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10">
+          <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10 z-20">
             <motion.div
               className="h-full bg-gradient-to-r from-morado-500 to-salmon-500"
               initial={{ width: '0%' }}

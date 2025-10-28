@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Leaf, ShieldCheck, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom'; // <- Importar Link
 
 const NaturalDifferentiator = () => {
   const features = [
@@ -106,7 +107,7 @@ const NaturalDifferentiator = () => {
               ))}
             </div>
 
-            {/* CTA opcional */}
+            {/* CTA opcional usando Link */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -114,13 +115,13 @@ const NaturalDifferentiator = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="mt-8"
             >
-              <button
-                onClick={() => window.location.href = '/sabores'}
+              <Link
+                to="/sabores"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-morado-500 to-morado-600 hover:from-morado-600 hover:to-morado-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 Conoce Todos Nuestros Sabores
                 <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
